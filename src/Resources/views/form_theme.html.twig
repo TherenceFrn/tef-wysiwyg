@@ -1,5 +1,5 @@
 {% block tef_wysiwyg_widget %}
-    {% spaceless %}
+    {% apply spaceless %}
         {{ form_widget(form, {'attr': {'style': 'display:none'}}) }}
         <div id="editor_{{ id }}"></div>
 
@@ -20,5 +20,5 @@
                 quill.root.innerHTML = textarea.value;
             })();
         </script>
-    {% endspaceless %}
+    {% endapply %}
 {% endblock %}
