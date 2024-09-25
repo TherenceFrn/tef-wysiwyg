@@ -7,8 +7,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
-
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('tef_wysiwyg');
 
@@ -17,7 +16,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
             ->arrayNode('default_options')
-            ->prototype('variable')->end()
+            ->variablePrototype()->end()
             ->end()
             ->end()
         ;
