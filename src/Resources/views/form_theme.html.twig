@@ -1,0 +1,24 @@
+{% block tef_wysiwyg_widget %}
+    {% spaceless %}
+        {{ form_widget(form, {'attr': {'style': 'display:none'}}) }}
+        <div id="editor_{{ id }}"></div>
+
+        {% if not tef_wysiwyg_assets_included is defined %}
+            {% set tef_wysiwyg_assets_included = true %}
+
+            <script src="{{ asset('bundles/tefwysiwyg/js/quill.min.js') }}"></script>
+            <link href="{{ asset('bundles/tefwysiwyg/css/quill.snow.css') }}" rel="stylesheet">
+        {% endif %}
+
+        <script>
+            (function() {
+                var quill = new Quill('#editor_{{ id }}', {{ wysiwyg_options|json_encode|raw }});
+                var textarea = document.getElementById('{{ id }}');
+                quill.on('text-change', function() {
+                    textarea.value = quill.root.innerHTML;
+                });
+                quill.root.innerHTML = textarea.value;
+            })();
+        </script>
+    {% endspaceless %}
+{% endblock %}

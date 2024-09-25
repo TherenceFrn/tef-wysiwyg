@@ -1,0 +1,6 @@
+services:
+  TherenceFrn\TefWysiwyg\Form\Type\WysiwygType:
+    arguments:
+      - '%tef_wysiwyg.default_options%'
+    tags:
+      - { name: form.type }

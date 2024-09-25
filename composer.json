@@ -1,0 +1,30 @@
+{
+  "name": "therencefrn/tef-wysiwyg",
+  "description": "Un éditeur WYSIWYG pour les formulaires Symfony 7",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {*
+      "name": "Therence",
+      "email": "votre.email@example.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "symfony/framework-bundle": "^6.0 || ^7.0",
+    "symfony/form": "^6.0 || ^7.0",
+    "symfony/asset": "^6.0 || ^7.0",
+    "symfony/dependency-injection": "^6.0 || ^7.0",
+    "symfony/twig-bundle": "^6.0 || ^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TherenceFrn\\TefWysiwyg\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.0-dev"
+    }
+  }
+}
